@@ -18,16 +18,101 @@ st.set_page_config(page_title="CohortPilot | Project Delivery Workspace", page_i
                    layout="wide", initial_sidebar_state="expanded")
 st.markdown("""
 <style>
-.block-container {padding-top: 1.65rem; max-width: 1440px;}
-h1,h2,h3 {letter-spacing:-.035em; color:#18253c;}
-[data-testid="stMetric"] {background:#fff; border:1px solid #e4eaf1; border-radius:16px;
-   padding:14px 18px; box-shadow:0 3px 18px rgba(12,35,70,.035);}
-[data-testid="stSidebar"] {background:#f5f7fb;}
+/* CohortPilot accessible, consistent LIGHT appearance across all pages. */
+:root { color-scheme: light; }
+html, body, [data-testid="stApp"], [data-testid="stAppViewContainer"] {
+  background: #F8FAFD !important; color: #17263D !important;
+}
+[data-testid="stHeader"] { background: #F8FAFD !important; }
+.block-container { padding-top: 1.65rem; max-width: 1440px; }
+h1,h2,h3,h4,h5,h6 { letter-spacing:-.025em; color:#17263D !important; }
+h1 { font-weight:750 !important; }
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] li,
+[data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] span,
+[data-testid="stAppViewContainer"] div[data-testid="stMarkdownContainer"] {
+  color: #243650;
+}
+[data-testid="stSidebar"] {
+  background: #EAF0F8 !important;
+  border-right:1px solid #D5DEEA;
+}
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div[data-testid="stMarkdownContainer"] {
+  color: #20334E !important;
+}
 [data-testid="stSidebar"] .stButton button {width:100%;}
-.stButton > button[kind="primary"] {background:#3459d4; border-color:#3459d4;}
-.note {padding:14px 16px;border-radius:12px;background:#eef3ff;border:1px solid #d9e4ff;color:#26456b;}
-.soft {color:#69798a;font-size:.94rem;}
-.pill {display:inline-block;border:1px solid #d7e0ec;border-radius:100px;padding:3px 10px;font-size:.8rem;color:#435675;}
+[data-testid="stSidebar"] [role="radiogroup"] label {
+  padding: .2rem .3rem; border-radius: .4rem;
+}
+[data-testid="stMetric"] {
+  background:#FFFFFF !important; border:1px solid #DAE3EF;
+  border-radius:14px; padding:15px 18px;
+  box-shadow:0 3px 14px rgba(20,45,80,.04);
+}
+[data-testid="stMetric"] label,
+[data-testid="stMetric"] [data-testid="stMetricValue"] {
+  color: #17263D !important;
+}
+[data-testid="stMetric"] [data-testid="stMetricDelta"] { color:#496078 !important; }
+[data-testid="stVerticalBlockBorderWrapper"] > div,
+[data-testid="stExpander"] {
+  border-color: #D9E2ED;
+}
+[data-testid="stExpander"] details, [data-testid="stExpander"] summary {
+  color: #17263D !important;
+}
+[data-testid="stExpander"] summary:hover { background:#F0F4FA; }
+[data-testid="stTabs"] [role="tab"] { color:#405574 !important; }
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+  color:#2445BA !important; border-bottom-color:#3154CB !important;
+}
+[data-testid="stWidgetLabel"] p {color:#243650 !important;font-weight:550;}
+/* Form widgets and dropdown content must be readable regardless of OS dark mode. */
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
+[data-baseweb="select"] input,
+[data-baseweb="select"] [role="combobox"],
+[data-baseweb="select"] > div,
+[data-baseweb="popover"] [role="option"],
+[data-testid="stDateInput"] input {
+  background:#FFFFFF !important; color:#17263D !important;
+}
+[data-baseweb="select"] svg { fill:#425774 !important; }
+input::placeholder, textarea::placeholder {color:#65758D !important; opacity:1;}
+.stButton > button[kind="primary"] {
+  background:#3154CB !important; border-color:#3154CB !important;
+  color:#FFFFFF !important; font-weight:650;
+}
+.stButton > button[kind="primary"] p {color:#FFFFFF !important;}
+.stButton > button[kind="secondary"],
+.stDownloadButton > button {
+  background:#FFFFFF !important; color:#213D72 !important;
+  border-color:#CBD8EA !important;
+}
+.stButton > button[kind="secondary"] p,
+.stDownloadButton > button p {color:#213D72 !important;}
+[data-testid="stAlert"] {border-radius:12px;}
+[data-testid="stDataFrame"], [data-testid="stDataEditor"] {background:#FFFFFF;}
+.note {
+  padding:14px 16px;border-radius:12px;background:#EAF0FF;
+  border:1px solid #C6D6FF; color:#213D70 !important;
+}
+.note b {color:#172F63 !important;}
+.soft {color:#51627A !important;font-size:.96rem;line-height:1.55;}
+.pill {display:inline-block;border:1px solid #D1DCEC;border-radius:100px;
+  padding:3px 10px;font-size:.8rem;color:#3C526D !important;}
+@media(max-width:780px) {
+  .block-container {padding:1rem .85rem 2rem;}
+  h1 {font-size:1.7rem !important;}
+  [data-testid="stMetric"] {padding:11px 12px;}
+}
 </style>
 """, unsafe_allow_html=True)
 
