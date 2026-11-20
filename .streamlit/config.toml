@@ -1,0 +1,18 @@
+# CohortPilot presentation theme. Light-only to keep every page legible on Streamlit Cloud.
+# Committing this file is essential: without it browsers may select a conflicting dark theme.
+[theme]
+base = "light"
+primaryColor = "#3154CB"
+backgroundColor = "#F8FAFD"
+secondaryBackgroundColor = "#EEF3F9"
+textColor = "#17263D"
+font = "sans serif"
+
+[theme.sidebar]
+backgroundColor = "#EAF0F8"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#22334C"
+primaryColor = "#3154CB"
+
+[server]
+maxUploadSize = 10
